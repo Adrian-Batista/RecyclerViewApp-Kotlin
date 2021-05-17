@@ -11,6 +11,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="4dp"
+        android:layout_marginBottom="60dp"
         tools:listitem="@layout/item"></androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/insertButton"
+        android:layout_margin="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insert"
+        android:onClick="insertItem"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/removeButton"
+        android:layout_margin="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove"
+        android:onClick="removeItem"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
