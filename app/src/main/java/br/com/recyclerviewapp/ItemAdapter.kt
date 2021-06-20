@@ -19,6 +19,7 @@ class ItemAdapter(
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
         val textView1: TextView = itemView.findViewById(R.id.textView1)
         val textView2: TextView = itemView.findViewById(R.id.textView2)
+        val textView3: TextView = itemView.findViewById(R.id.textView3)
 
         init {
             itemView.setOnClickListener(this)
@@ -43,6 +44,7 @@ class ItemAdapter(
         holder.imageView.setImageResource(currentItem.imageResource)
         holder.textView1.setText(currentItem.text1)
         holder.textView2.setText(currentItem.text2)
+        holder.textView3.setText(currentItem.text3)
     }
 
     override fun getItemCount() = itemList.size

@@ -10,7 +10,7 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity(), OnItemClickListener {
 
-    private val list = generateDummyList(500)
+    private val list = generateDummyList(10)
     private val adapter = ItemAdapter(list, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,10 +24,20 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
     }
 
     fun insertItem(view: View){
+        val newItem = Item(R.drawable.ic_android_black_24dp,
+            "New item at position ${list.size}",
+            "Line 2",
+            2011)
+        list.add(newItem)
+        adapter.notifyItemInserted(list.size)
+    }
+
+    fun editItem(view: View){
         val index: Int = Random.nextInt(8)
         val newItem = Item(R.drawable.ic_android_black_24dp,
-            "New item at position $index",
-            "Line 2")
+            "New item at position ${list.size}",
+            "Line 2",
+            2011)
         list.add(index, newItem)
         adapter.notifyItemInserted(index)
     }
@@ -53,7 +63,9 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
                 1-> R.drawable.ic_baseline_ac_unit_24
                 else-> R.drawable.ic_baseline_adb_24
             }
-            val item = Item(drawable, "Item $i", "Line 2")
+            val item = Item(drawable, "New item at position ${list.size}",
+                "Line 2",
+                2011)
             list.add(item)
         }
         return list
